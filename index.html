@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>War Simulator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="clock.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@600&family=Syne+Tactile&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class=container id="player-1-hand"></div>
+  <div class=container id="player-1-table"></div>
+    <div class="middle-panel"> 
+      <div class="time-container">
+        <span id=clock>
+          <div id="clock-hour-hand"></div>
+          <div id="clock-minute-hand"></div>
+        </span>
+        <span id=time></span>
+      </div>
+
+    <div>
+      <button id="start">War!</button>
+      <button id="reset" style="display:none" onclick=location.reload()>Reset</button>
+    </div>
+
+    <div>
+      <input type="checkbox"  id="shuffle-every-100">
+      <label for="shuffle-every-100">Shuffle every 100 turns</label>
+    </div>
+
+    <div class="scope-container">
+      <canvas id="scope" width="900" height="200" ></canvas>
+    </div>
+  </div>
+
+  <div class=container id="player-2-table"></div>
+  <div class=container id="player-2-hand"></div>
+  <script src="scope.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

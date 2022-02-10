@@ -1,0 +1,53 @@
+/* https://codepen.io/NikhilKumaran/pen/GRoboYJ */
+/* https://matthewkosloski.me/labs/pixem/editor/ */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#clock {
+  display: block;
+  position: relative;
+  width: 3em;
+  height: 3em;
+  /* border: 0.2em solid #5c4835; */
+  border-radius: 0.5rem;
+  background: #fefbf2;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#clock-minute-hand {
+  position: absolute;
+  content: '';
+  height: 1.3em;
+  width: 0.1em;
+  background: black;
+  top: 50%;
+  left: calc(50% - 0.05em);
+  border-radius: 0.05em;
+  /* animation: spin 6s linear infinite; */
+  transform-origin: top;
+}
+
+#clock-hour-hand {
+  position: absolute;
+  content: '';
+  height: 1em;
+  width: 0.1em;
+  background: black;
+  top: 50%;
+  left: calc(50% - 0.05em);
+  border-radius: 0.05em;
+  /* animation: spin 72s linear infinite; */
+  transform-origin: top;
+  
+}
+
+@keyframes spin {
+  0% {
+      transform: rotate(-180deg)
+  }
+  100% {
+      transform: rotate(180deg)
+  }
+}
