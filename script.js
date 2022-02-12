@@ -7,6 +7,7 @@ const timeDisplay = document.getElementById("time");
 const clockHourHand = document.getElementById("clock-hour-hand");
 const clockMinuteHand = document.getElementById("clock-minute-hand");
 const shuffleEvery100 = document.getElementById("shuffle-every-100");
+const randomizePickup = document.getElementById("randomize-pickup");
 let interval = null;
 let seconds = 0;
 let step = 0;
@@ -88,10 +89,16 @@ function shufflePlayerHand(hand){;
 }
 
 function moveTableCardsToWinner(winner){
-  while (player1Table.childElementCount > 0)
-    winner.prepend(detach(randomChild(player1Table)));
-  while (player2Table.childElementCount > 0)
-    winner.prepend(detach(randomChild(player2Table)));
+  let liftedCards = [].concat(
+    Array.from(player1Table.childNodes),
+    Array.from(player2Table.childNodes)
+    );
+  
+  if (randomizePickup.checked)
+    fisherYates(liftedCards);
+    
+  while (liftedCards.length > 0)
+    winner.prepend(detach(liftedCards.pop()));
 }
 function randomChild(parent){
   return parent.childNodes[Math.floor(Math.random() * parent.childNodes.length)];
