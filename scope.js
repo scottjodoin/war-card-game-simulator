@@ -42,7 +42,7 @@ class Scope{
     for (let i = 0; i <= this.buffer.length; i++){
       let x = i;
 
-      let y = (this.buffer[i] * scale + 1) * this.bufferHeight / 2;
+      let y = this.bufferHeight - (this.buffer[i] * scale + 1) * this.bufferHeight / 2;
       y = Math.floor(y);
       if (i==0) ctx.moveTo(x,y);
       
